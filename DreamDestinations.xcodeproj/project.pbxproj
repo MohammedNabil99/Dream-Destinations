@@ -16,6 +16,7 @@
 		AD5E1610274552B100330EE8 /* DreamDestinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E160F274552B100330EE8 /* DreamDestinationsTests.swift */; };
 		AD5E161A274552B100330EE8 /* DreamDestinationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E1619274552B100330EE8 /* DreamDestinationsUITests.swift */; };
 		AD5E161C274552B100330EE8 /* DreamDestinationsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E161B274552B100330EE8 /* DreamDestinationsUITestsLaunchTests.swift */; };
+		AD5E16292745610400330EE8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E16282745610400330EE8 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AD5E1615274552B100330EE8 /* DreamDestinationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamDestinationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5E1619274552B100330EE8 /* DreamDestinationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamDestinationsUITests.swift; sourceTree = "<group>"; };
 		AD5E161B274552B100330EE8 /* DreamDestinationsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamDestinationsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD5E16282745610400330EE8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AD5E1601274552B100330EE8 /* Assets.xcassets */,
 				AD5E1603274552B100330EE8 /* LaunchScreen.storyboard */,
 				AD5E1606274552B100330EE8 /* Info.plist */,
+				AD5E16282745610400330EE8 /* CameraViewController.swift */,
 			);
 			path = DreamDestinations;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5E15FD274552AF00330EE8 /* ViewController.swift in Sources */,
+				AD5E16292745610400330EE8 /* CameraViewController.swift in Sources */,
 				AD5E15F9274552AF00330EE8 /* AppDelegate.swift in Sources */,
 				AD5E15FB274552AF00330EE8 /* SceneDelegate.swift in Sources */,
 			);
@@ -442,9 +446,9 @@
 				DEVELOPMENT_TEAM = V6LS94JQJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DreamDestinations/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,9 +474,9 @@
 				DEVELOPMENT_TEAM = V6LS94JQJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DreamDestinations/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
