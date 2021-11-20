@@ -27,8 +27,9 @@ This is a location detector app, which allow user to upload pictures of various 
 
 **Required Must-have Stories**
 
-- [ ] A styled launch screen is visible when opening the app
-- [ ] User can upload picture of a landmark
+- [x] A styled launch screen is visible when opening the app
+- [x] User can upload picture of a landmark
+- [ ] Uploaded images are saved through Parse Server
 - [ ] User can see a table of uploaded landmarks with landmark image and location
 - [ ] Landmarks are marked on the map and is viewable on the maps tab
 
@@ -128,7 +129,7 @@ query.findObjectsInBackground {
 
 
 
-* Build Progress 11/17/2021
+* Build Progress 11/20/2021
 
 
-![](https://media2.giphy.com/media/9l0G8emRmY8jsqDaXc/giphy.gif?cid=790b7611f4bae000044c970ad901768d862a8c076693576f&rid=giphy.gif&ct=g)
+
