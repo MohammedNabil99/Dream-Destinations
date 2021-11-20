@@ -27,7 +27,16 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
         present(picker, animated: true, completion: nil)
+        
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        imageView.image = image
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
