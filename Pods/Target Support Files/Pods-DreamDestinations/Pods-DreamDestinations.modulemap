@@ -1,0 +1,6 @@
+framework module Pods_DreamDestinations {
+  umbrella header "Pods-DreamDestinations-umbrella.h"
+
+  export *
+  module * { export * }
+}
