@@ -29,6 +29,7 @@ This is a location detector app, which allow user to upload pictures of various 
 
 - [x] A styled launch screen is visible when opening the app
 - [x] User can upload picture of a landmark
+- [x] Add PodFile and AlmaofireImage
 - [ ] Uploaded images are saved through Parse Server
 - [ ] User can see a table of uploaded landmarks with landmark image and location
 - [ ] Landmarks are marked on the map and is viewable on the maps tab
