@@ -58,7 +58,7 @@ This is a location detector app, which allow user to upload pictures of various 
 
 **Flow Navigation** (Screen to Screen)
 * Table View Finder
-  - Goes to specific Wifi point if an user taps on one from the list.
+  - Goes to specific landmark location if an user taps on one from the list.
 
 
 
