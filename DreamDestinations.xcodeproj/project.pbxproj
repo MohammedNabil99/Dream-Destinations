@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ECBF0169C3984567050F655 /* Pods_DreamDestinations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6521F6CBB5F8750F6D6D24FF /* Pods_DreamDestinations.framework */; };
+		72428ED79ECBEDE851D2621C /* Pods_DreamDestinations_DreamDestinationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1007D1B27A91832C61B46A39 /* Pods_DreamDestinations_DreamDestinationsUITests.framework */; };
+		76905E3A3FB0A53E0DC19996 /* Pods_DreamDestinationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */; };
 		AD5E15F9274552AF00330EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15F8274552AF00330EE8 /* AppDelegate.swift */; };
 		AD5E15FB274552AF00330EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15FA274552AF00330EE8 /* SceneDelegate.swift */; };
 		AD5E15FD274552AF00330EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15FC274552AF00330EE8 /* ViewController.swift */; };
@@ -37,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1007D1B27A91832C61B46A39 /* Pods_DreamDestinations_DreamDestinationsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinations_DreamDestinationsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1087A37FC41BC60081D753CD /* Pods-DreamDestinations-DreamDestinationsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations-DreamDestinationsUITests.release.xcconfig"; path = "Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		17E775EC6F52D0C34BE3DADD /* Pods-DreamDestinations.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations.debug.xcconfig"; path = "Target Support Files/Pods-DreamDestinations/Pods-DreamDestinations.debug.xcconfig"; sourceTree = "<group>"; };
+		21105FF0E09C3C799403D01F /* Pods-DreamDestinationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinationsTests.debug.xcconfig"; path = "Target Support Files/Pods-DreamDestinationsTests/Pods-DreamDestinationsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D164E35FB21F23B8805033B /* Pods-DreamDestinationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinationsTests.release.xcconfig"; path = "Target Support Files/Pods-DreamDestinationsTests/Pods-DreamDestinationsTests.release.xcconfig"; sourceTree = "<group>"; };
+		48D3CC984BD4844CC32F6F5D /* Pods-DreamDestinations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations.release.xcconfig"; path = "Target Support Files/Pods-DreamDestinations/Pods-DreamDestinations.release.xcconfig"; sourceTree = "<group>"; };
+		6521F6CBB5F8750F6D6D24FF /* Pods_DreamDestinations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B654400BF67FDB21E767572 /* Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig"; path = "Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5E15F5274552AF00330EE8 /* DreamDestinations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamDestinations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5E15F8274552AF00330EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5E15FA274552AF00330EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ECBF0169C3984567050F655 /* Pods_DreamDestinations.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76905E3A3FB0A53E0DC19996 /* Pods_DreamDestinationsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72428ED79ECBEDE851D2621C /* Pods_DreamDestinations_DreamDestinationsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EB50E035A00FA62BAF8D469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6521F6CBB5F8750F6D6D24FF /* Pods_DreamDestinations.framework */,
+				1007D1B27A91832C61B46A39 /* Pods_DreamDestinations_DreamDestinationsUITests.framework */,
+				6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93C37C321666B3376D1CB65F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17E775EC6F52D0C34BE3DADD /* Pods-DreamDestinations.debug.xcconfig */,
+				48D3CC984BD4844CC32F6F5D /* Pods-DreamDestinations.release.xcconfig */,
+				8B654400BF67FDB21E767572 /* Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig */,
+				1087A37FC41BC60081D753CD /* Pods-DreamDestinations-DreamDestinationsUITests.release.xcconfig */,
+				21105FF0E09C3C799403D01F /* Pods-DreamDestinationsTests.debug.xcconfig */,
+				2D164E35FB21F23B8805033B /* Pods-DreamDestinationsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AD5E15EC274552AF00330EE8 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				AD5E160E274552B100330EE8 /* DreamDestinationsTests */,
 				AD5E1618274552B100330EE8 /* DreamDestinationsUITests */,
 				AD5E15F6274552AF00330EE8 /* Products */,
+				93C37C321666B3376D1CB65F /* Pods */,
+				5EB50E035A00FA62BAF8D469 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5E161F274552B100330EE8 /* Build configuration list for PBXNativeTarget "DreamDestinations" */;
 			buildPhases = (
+				070800068266F478B992ACCC /* [CP] Check Pods Manifest.lock */,
 				AD5E15F1274552AF00330EE8 /* Sources */,
 				AD5E15F2274552AF00330EE8 /* Frameworks */,
 				AD5E15F3274552AF00330EE8 /* Resources */,
+				83AA39FA375C4BC09B4BBF3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5E1622274552B100330EE8 /* Build configuration list for PBXNativeTarget "DreamDestinationsTests" */;
 			buildPhases = (
+				9326E4F91C00A86D16EA0870 /* [CP] Check Pods Manifest.lock */,
 				AD5E1607274552B100330EE8 /* Sources */,
 				AD5E1608274552B100330EE8 /* Frameworks */,
 				AD5E1609274552B100330EE8 /* Resources */,
@@ -172,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5E1625274552B100330EE8 /* Build configuration list for PBXNativeTarget "DreamDestinationsUITests" */;
 			buildPhases = (
+				1DF86C9A65F575FE850B9CB3 /* [CP] Check Pods Manifest.lock */,
 				AD5E1611274552B100330EE8 /* Sources */,
 				AD5E1612274552B100330EE8 /* Frameworks */,
 				AD5E1613274552B100330EE8 /* Resources */,
+				429A7BCEC64529A3B693BA1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +301,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		070800068266F478B992ACCC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DreamDestinations-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1DF86C9A65F575FE850B9CB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DreamDestinations-DreamDestinationsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		429A7BCEC64529A3B693BA1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83AA39FA375C4BC09B4BBF3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DreamDestinations/Pods-DreamDestinations-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DreamDestinations/Pods-DreamDestinations-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DreamDestinations/Pods-DreamDestinations-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9326E4F91C00A86D16EA0870 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DreamDestinationsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD5E15F1274552AF00330EE8 /* Sources */ = {
@@ -438,6 +587,7 @@
 		};
 		AD5E1620274552B100330EE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17E775EC6F52D0C34BE3DADD /* Pods-DreamDestinations.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -466,6 +616,7 @@
 		};
 		AD5E1621274552B100330EE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48D3CC984BD4844CC32F6F5D /* Pods-DreamDestinations.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -494,6 +645,7 @@
 		};
 		AD5E1623274552B100330EE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21105FF0E09C3C799403D01F /* Pods-DreamDestinationsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +671,7 @@
 		};
 		AD5E1624274552B100330EE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D164E35FB21F23B8805033B /* Pods-DreamDestinationsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -544,6 +697,7 @@
 		};
 		AD5E1626274552B100330EE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B654400BF67FDB21E767572 /* Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -567,6 +721,7 @@
 		};
 		AD5E1627274552B100330EE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1087A37FC41BC60081D753CD /* Pods-DreamDestinations-DreamDestinationsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
