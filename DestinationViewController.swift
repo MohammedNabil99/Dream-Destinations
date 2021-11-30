@@ -12,7 +12,7 @@ class DestinationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any addi//testtional setup after loading the view.
     }
     
 
