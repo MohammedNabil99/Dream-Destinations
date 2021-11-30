@@ -10,9 +10,9 @@
 		0ECBF0169C3984567050F655 /* Pods_DreamDestinations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6521F6CBB5F8750F6D6D24FF /* Pods_DreamDestinations.framework */; };
 		72428ED79ECBEDE851D2621C /* Pods_DreamDestinations_DreamDestinationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1007D1B27A91832C61B46A39 /* Pods_DreamDestinations_DreamDestinationsUITests.framework */; };
 		76905E3A3FB0A53E0DC19996 /* Pods_DreamDestinationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */; };
+		81E448CF2756E59C00B305CA /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E448CE2756E59C00B305CA /* DestinationViewController.swift */; };
 		AD5E15F9274552AF00330EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15F8274552AF00330EE8 /* AppDelegate.swift */; };
 		AD5E15FB274552AF00330EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15FA274552AF00330EE8 /* SceneDelegate.swift */; };
-		AD5E15FD274552AF00330EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15FC274552AF00330EE8 /* ViewController.swift */; };
 		AD5E1600274552AF00330EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5E15FE274552AF00330EE8 /* Main.storyboard */; };
 		AD5E1602274552B100330EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5E1601274552B100330EE8 /* Assets.xcassets */; };
 		AD5E1605274552B100330EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5E1603274552B100330EE8 /* LaunchScreen.storyboard */; };
@@ -48,11 +48,11 @@
 		48D3CC984BD4844CC32F6F5D /* Pods-DreamDestinations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations.release.xcconfig"; path = "Target Support Files/Pods-DreamDestinations/Pods-DreamDestinations.release.xcconfig"; sourceTree = "<group>"; };
 		6521F6CBB5F8750F6D6D24FF /* Pods_DreamDestinations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E448CE2756E59C00B305CA /* DestinationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
 		8B654400BF67FDB21E767572 /* Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig"; path = "Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5E15F5274552AF00330EE8 /* DreamDestinations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamDestinations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5E15F8274552AF00330EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5E15FA274552AF00330EE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD5E15FC274552AF00330EE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD5E15FF274552AF00330EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD5E1601274552B100330EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD5E1604274552B100330EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,13 +113,13 @@
 				21105FF0E09C3C799403D01F /* Pods-DreamDestinationsTests.debug.xcconfig */,
 				2D164E35FB21F23B8805033B /* Pods-DreamDestinationsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		AD5E15EC274552AF00330EE8 = {
 			isa = PBXGroup;
 			children = (
+				81E448CE2756E59C00B305CA /* DestinationViewController.swift */,
 				AD5E15F7274552AF00330EE8 /* DreamDestinations */,
 				AD5E160E274552B100330EE8 /* DreamDestinationsTests */,
 				AD5E1618274552B100330EE8 /* DreamDestinationsUITests */,
@@ -144,7 +144,6 @@
 			children = (
 				AD5E15F8274552AF00330EE8 /* AppDelegate.swift */,
 				AD5E15FA274552AF00330EE8 /* SceneDelegate.swift */,
-				AD5E15FC274552AF00330EE8 /* ViewController.swift */,
 				AD5E15FE274552AF00330EE8 /* Main.storyboard */,
 				AD5E1601274552B100330EE8 /* Assets.xcassets */,
 				AD5E1603274552B100330EE8 /* LaunchScreen.storyboard */,
@@ -410,10 +409,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD5E15FD274552AF00330EE8 /* ViewController.swift in Sources */,
 				AD5E16292745610400330EE8 /* CameraViewController.swift in Sources */,
 				AD5E15F9274552AF00330EE8 /* AppDelegate.swift in Sources */,
 				AD5E15FB274552AF00330EE8 /* SceneDelegate.swift in Sources */,
+				81E448CF2756E59C00B305CA /* DestinationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
