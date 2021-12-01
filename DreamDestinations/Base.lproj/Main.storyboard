@@ -58,7 +58,7 @@
         <!--Saved Locations-->
         <scene sceneID="KR8-ag-XyG">
             <objects>
-                <viewController title="Saved Locations" id="p4e-4j-xOa" sceneMemberID="viewController">
+                <viewController title="Saved Locations" id="p4e-4j-xOa" customClass="TableViewController" customModule="DreamDestinations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jg7-ZW-p8X">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Saved Locations" image="magnifyingglass" catalog="system" id="fKl-kI-LYZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="luf-5U-cDs" id="XoZ-BT-ph1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YnJ-vg-R9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
