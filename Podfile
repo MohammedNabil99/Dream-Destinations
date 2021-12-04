@@ -9,6 +9,7 @@ target 'DreamDestinations' do
 
   pod 'Parse'
   pod 'AlamofireImage'
+  pod 'Alamofire'
 
   target 'DreamDestinationsTests' do
     inherit! :search_paths
