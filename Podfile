@@ -8,6 +8,8 @@ target 'DreamDestinations' do
   # Pods for DreamDestinations
 
   pod 'Parse'
+  pod 'AFNetworking'
+  pod 'BDBOAuth1Manager'
   pod 'AlamofireImage'
 
   target 'DreamDestinationsTests' do

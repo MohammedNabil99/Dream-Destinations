@@ -8,24 +8,6 @@
 import UIKit
 import Parse
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-
-        // --- Copy this only
-        
-        let parseConfig = ParseClientConfiguration {
-                $0.applicationId = "YOUR_APP_ID" // <- UPDATE
-                $0.clientKey = "YOUR_CLIENT_KEY" // <- UPDATE
-                $0.server = "https://parseapi.back4app.com"
-        }
-        Parse.initialize(with: parseConfig)
-        
-        // --- end copy
-
-
-        return true
-    }
-
     var window: UIWindow?
 
 

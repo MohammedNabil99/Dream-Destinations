@@ -9,8 +9,6 @@ import UIKit
 
 class TableViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-   
-    
     @IBOutlet weak var tableView: UITableView!
     var landmarks = [[String:Any]]()
     
