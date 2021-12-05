@@ -97,7 +97,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             else{
                 print("error!")
             }
+           
     }
+
 }
     
     
