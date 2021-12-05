@@ -30,7 +30,7 @@ This is a location detector app, which allow user to upload pictures of various 
 - [x] A styled launch screen is visible when opening the app
 - [x] User can upload picture of a landmark
 - [x] Add PodFile and AlmaofireImage
-- [ ] Uploaded images are saved through Parse Server
+- [x] Uploaded images are saved through Parse Server
 - [ ] User can see a table of uploaded landmarks with landmark image and location
 - [ ] Landmarks are marked on the map and is viewable on the maps tab
 
@@ -132,8 +132,10 @@ query.findObjectsInBackground {
 
 * Build Progress 11/20/2021
 
+//Images are saved to parse server.
 
-![](https://i.imgur.com/s1Oik2u.gif)
+
+![](https://i.imgur.com/feNJ9M8.gif)
 
 
 
