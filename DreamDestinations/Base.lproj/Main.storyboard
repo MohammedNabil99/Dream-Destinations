@@ -34,9 +34,16 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onUploadButton:" destination="KLF-fz-4vE" eventType="touchUpInside" id="Dnj-Oc-FzP"/>
+                                    <action selector="onSaveImageButton:" destination="KLF-fz-4vE" eventType="touchUpInside" id="C34-EL-2k8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click on the image to upload picture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXb-OV-Ahp">
+                                <rect key="frame" x="31" y="133" width="369" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g19-b3-BXZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,7 +56,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Di-5d-sMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Mte-al-nHh">
                     <connections>
-                        <action selector="onCameraButton:" destination="KLF-fz-4vE" id="A7P-d6-Tu0"/>
+                        <action selector="onCameraButton:" destination="KLF-fz-4vE" id="P8i-Bg-E8s"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
