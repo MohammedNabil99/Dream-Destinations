@@ -6,12 +6,23 @@
 //
 
 import UIKit
-
+import AlamofireImage
+import Parse
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func onSaveImageButton(_ sender: Any) {
+        let landmark = PFObject(className: "Landmarks")
+        landmark["location"] = "Eiffel Tower"
+        landmark.saveInBackground { (success,error) in
+            if success{
+                print("saved")
+            }
+            else{
+                print("error")
+            }
+        }
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -34,6 +45,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image = info[.editedImage] as! UIImage
         imageView.image = image
         
+        let size = CGSize(width:300,height: 300)
+        let scaledImage = image.af_imageScaled(to:size)
+        imageView.image = scaledImage
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -43,12 +58,14 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTP1wroX-f5EtG-fdw-BYWB5mTeZRtFdgrVME8ZXHJKxoDMCHS1o_c-YIgcgI2NmVqIlR0rSGh8tbJVBBkIoOF_H-Ng5eDPBVyoIcDtQsORhKmpEygPQmEk2rtzp4wz6o8OJAZFaFtLpNMrMcJmFmuCms9mnljwgQVshnGCkZS5kU80v01NB4zlTtf4Kj63YFokCveAHwkg-enVhQAnL4CQAcQs"
-
+        let key = "   ya29.a0ARrdaM99hO2ub5fWhoT0oT_P6I8M2EOIuFQigxtx7kGobEcQ5rvep71TWlcnfywL6EdMuiSvFZhCVb88evxQ5SKtWZ3x2fdEI_sivYd5RZGbebLKbd_pYH_SBMEdwT5Rltc1Rw7m_rutVsfhXkxH0G0K0wXHYOdkcv_s1g"
+        
+     
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
         let postString = """
         {
           "requests": [
