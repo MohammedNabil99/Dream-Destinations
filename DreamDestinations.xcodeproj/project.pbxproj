@@ -11,6 +11,7 @@
 		72428ED79ECBEDE851D2621C /* Pods_DreamDestinations_DreamDestinationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1007D1B27A91832C61B46A39 /* Pods_DreamDestinations_DreamDestinationsUITests.framework */; };
 		76905E3A3FB0A53E0DC19996 /* Pods_DreamDestinationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */; };
 		81E448D12757C1D800B305CA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E448D02757C1D800B305CA /* TableViewController.swift */; };
+		81E8EA76275ECB9100452135 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E8EA75275ECB9100452135 /* MapViewController.swift */; };
 		AD5E15F9274552AF00330EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15F8274552AF00330EE8 /* AppDelegate.swift */; };
 		AD5E15FB274552AF00330EE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15FA274552AF00330EE8 /* SceneDelegate.swift */; };
 		AD5E15FD274552AF00330EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5E15FC274552AF00330EE8 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		6521F6CBB5F8750F6D6D24FF /* Pods_DreamDestinations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECC38579635D064DEE83A38 /* Pods_DreamDestinationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DreamDestinationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E448D02757C1D800B305CA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		81E8EA75275ECB9100452135 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B654400BF67FDB21E767572 /* Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig"; path = "Target Support Files/Pods-DreamDestinations-DreamDestinationsUITests/Pods-DreamDestinations-DreamDestinationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5E15F5274552AF00330EE8 /* DreamDestinations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamDestinations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5E15F8274552AF00330EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				AD5E1606274552B100330EE8 /* Info.plist */,
 				AD5E16282745610400330EE8 /* CameraViewController.swift */,
 				81E448D02757C1D800B305CA /* TableViewController.swift */,
+				81E8EA75275ECB9100452135 /* MapViewController.swift */,
 			);
 			path = DreamDestinations;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5E15FD274552AF00330EE8 /* ViewController.swift in Sources */,
+				81E8EA76275ECB9100452135 /* MapViewController.swift in Sources */,
 				AD5E16292745610400330EE8 /* CameraViewController.swift in Sources */,
 				AD5E15F9274552AF00330EE8 /* AppDelegate.swift in Sources */,
 				81E448D12757C1D800B305CA /* TableViewController.swift in Sources */,
