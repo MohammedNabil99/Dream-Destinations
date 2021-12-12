@@ -7,6 +7,56 @@
 import UIKit
 import Parse
 import AlamofireImage
+import Foundation
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+// https://app.quicktype.io/?share=l0KzbhyyDujEeaS98TPx
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
+
+// MARK: - Welcome
+struct Welcome: Codable {
+    let responses: [Response]
+}
+
+// MARK: - Response
+struct Response: Codable {
+    let landmarkAnnotations: [LandmarkAnnotation]
+}
+
+// MARK: - LandmarkAnnotation
+struct LandmarkAnnotation: Codable {
+    let mid, landmarkAnnotationDescription: String
+    let score: Double
+    let boundingPoly: BoundingPoly
+    let locations: [Location]
+
+    enum CodingKeys: String, CodingKey {
+        case mid
+        case landmarkAnnotationDescription = "description"
+        case score, boundingPoly, locations
+    }
+}
+
+// MARK: - BoundingPoly
+struct BoundingPoly: Codable {
+    let vertices: [Vertex]
+}
+
+// MARK: - Vertex
+struct Vertex: Codable {
+    let x, y: Int
+}
+
+// MARK: - Location
+struct Location: Codable {
+    let latLng: LatLng
+}
+
+// MARK: - LatLng
+struct LatLng: Codable {
+    let latitude, longitude: Double
+}
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,8 +68,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTMQT6hVpBR57fBnKW04JzGGWkH3qO3wOBJp6eQbVKTy0C1STPlGL9cFHrV0exrqS57UHNUJd0oi4y6xCdWsaTctkPBa-APXfMcYLr4kmvrPBWBsDD0JD83iEd6AdJbHINqYWST98bowFX2lwpUmNG_h69dYTb-o4nsWOJJpTsvJ5hqxzTBq0VzWB3vZzRxCER4Cd0rLb9PYQPfxqk2ibNL4-oE"
 
+        let key = "ya29.c.b0AXv0zTN7YEwUZeO232ht9ataVOOTKzEw1jLXKz5AwcbREV1FX98KBdYCXOU4_csRausazpkKs6S4GxjySuDMv_8PqUav3_sKRwjngQr8B1qiVCV_WqPlROKrDNcTP-HE9Yr7ziVHVebBivTtUP6KrGUiS7mlXptZKHsyeBb-Lp6MvANhjXGWNLNKESSMAsYgfmil2VEXKGGkhvN-mLethxPNBbWAW5A"
+
+      
+
+        let image = "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+        
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
@@ -36,7 +91,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
               ],
               "image": {
                 "source": {
-                  "imageUri": "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+                  "imageUri": "\(image)"
                 }
               }
             }
@@ -53,11 +108,17 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     print("Error took place \(error)")
                     return
                 }
-         
+                
                 // Convert HTTP Response Data to a String
                 if let data = data, let dataString = String(data: data, encoding: .utf8) {
                     print("Response data string:\n \(dataString)")
                     
+                    let jsonData = dataString.data(using: .utf8)!
+                    let myResponse = try! JSONDecoder().decode(Welcome.self, from: jsonData)
+                    print(myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription)
+                    print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude)
+                    print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.longitude)
+
                 }
         }
         task.resume()
@@ -106,7 +167,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image = info[.editedImage] as! UIImage
         
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af.imageScaled(to: size)
         
         imageView.image = scaledImage
         

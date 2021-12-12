@@ -21,7 +21,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTOOi58frl8CJxsnt5LRoqT8z9Nizm8obC_JOzw-TBh6bRwYJS916SQJ-ITVjnPVprZzftAgHDV2DUJtCpLgyl1LMw7yPGOXvXZ3Bmgk5r2Hl8SzieaWbzNF-oLDaHIARRTjuXye5Ib5fr9MYc2p_ZhaEX-Wh0zRClMM2dpTqg702XIbf1DmIbJadnDdGOzOJc1tFXpFOtFRnySRJrtOseEIkPA"
+        let key = "ya29.c.b0AXv0zTN7YEwUZeO232ht9ataVOOTKzEw1jLXKz5AwcbREV1FX98KBdYCXOU4_csRausazpkKs6S4GxjySuDMv_8PqUav3_sKRwjngQr8B1qiVCV_WqPlROKrDNcTP-HE9Yr7ziVHVebBivTtUP6KrGUiS7mlXptZKHsyeBb-Lp6MvANhjXGWNLNKESSMAsYgfmil2VEXKGGkhvN-mLethxPNBbWAW5A"
 
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -56,40 +56,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     print("Error took place \(error)")
                     return
                 }
-         
+                
                 // Convert HTTP Response Data to a String
                 if let data = data, let dataString = String(data: data, encoding: .utf8) {
                     print("Response data string:\n \(dataString)")
-                    print(dataString)
+                    
+                    let jsonData = dataString.data(using: .utf8)!
+                    let myResponse = try! JSONDecoder().decode(Welcome.self, from: jsonData)
+                    print(myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription)
+                    let latitude = myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude
+                    let longitude = myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.longitude
+                    print(latitude)
+                    print(longitude)
+                    self.locationManager.delegate = self
+                    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    self.locationManager.requestWhenInUseAuthorization()
+                    self.locationManager.startUpdatingLocation()
+                    self.mapView.showsUserLocation = true
+                    self.annotation.coordinate = CLLocationCoordinate2D(latitude:latitude , longitude: longitude)
+                  
+                    self.mapView.addAnnotation(self.annotation)
+
                 }
-            do {
-                      if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                           
-                           // Print out entire dictionary
-                           print(convertedJsonIntoDict)
-                           
-                           // Get value by key
-                           let userId = convertedJsonIntoDict["userId"]
-                           print(userId ?? "userId could not be read")
-                           
-                       }
-            } catch let error as NSError {
-                       print(error.localizedDescription)
-             }
         }
-        
-        
         task.resume()
         
 
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-        self.mapView.showsUserLocation = true
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 55.75, longitude: 37.62)
-      
-        mapView.addAnnotation(annotation)
+       
 
     }
 
