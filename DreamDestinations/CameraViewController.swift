@@ -69,11 +69,15 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
 
+<<<<<<< HEAD
         let key = "ya29.c.b0AXv0zTMg21JM4r22BPLkZxjIAdc-JKEcxpKPLFnBGtrwtmkKKrfIc7tUvmp4AogFI4OZetQ8TaVEqOAOawdrjUphb6Z2H8K2ZYWHYtaZEVH6OuCFlL0s0fHHwl9uIPu5Na1OeFEUBcR6qmGSW7yRSpurt0lWTr7dCbE7qVTSNvEbjLOGYZCwWppl96o4OxbmcNSKJ4CsNBsh3m7dsyEvsefNW-rIHFc"
+=======
+        let key = "ya29.c.b0AXv0zTNGgLVKKoNaTwX8uZFNzcZjx8XTnAhlsoFAP2_qyrehfTOJDvUQovtk8dxJi7DI4bdOxq-wFBav9tL4B34ajNEMmhIez_6qxIn1yIbvoJcuKIxJFMstfW27gQebBXO9DRZerMlulFNr5Kpg5uBISg6PD9C_Shf-jsQ1KRLbPtXpxrc4SsIBqojPk9PjVtGA9D8L7rgY4V1W8Gkr5UqQ3Zbr33E"
+>>>>>>> e0662181ff900357e666d674cb5ff8e24c15cb62
 
       
 
-        let image = "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+        //let image = "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
         
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -91,7 +95,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
               ],
               "image": {
                 "source": {
-                  "imageUri": "\(image)"
+                  "imageUri": "https://parsefiles.back4app.com/PxG3meZUr5AikZtQ88TxsQ5o0j6uSb6xSB26oCdh/0e7f4b74f7aa358dc97e40a47a44f616_image.png"
                 }
               }
             }
@@ -146,6 +150,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
        // post["author"] = PFUser.current()!
         
         let imageData = imageView.image!.pngData()
+        
         let file = PFFileObject(name: "image.png", data: imageData!)
         
         post["image"] = file
