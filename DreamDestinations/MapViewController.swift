@@ -21,12 +21,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTN7YEwUZeO232ht9ataVOOTKzEw1jLXKz5AwcbREV1FX98KBdYCXOU4_csRausazpkKs6S4GxjySuDMv_8PqUav3_sKRwjngQr8B1qiVCV_WqPlROKrDNcTP-HE9Yr7ziVHVebBivTtUP6KrGUiS7mlXptZKHsyeBb-Lp6MvANhjXGWNLNKESSMAsYgfmil2VEXKGGkhvN-mLethxPNBbWAW5A"
+        let key = "ya29.c.b0AXv0zTNGgLVKKoNaTwX8uZFNzcZjx8XTnAhlsoFAP2_qyrehfTOJDvUQovtk8dxJi7DI4bdOxq-wFBav9tL4B34ajNEMmhIez_6qxIn1yIbvoJcuKIxJFMstfW27gQebBXO9DRZerMlulFNr5Kpg5uBISg6PD9C_Shf-jsQ1KRLbPtXpxrc4SsIBqojPk9PjVtGA9D8L7rgY4V1W8Gkr5UqQ3Zbr33E"
 
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        let image = "https://parsefiles.back4app.com/PxG3meZUr5AikZtQ88TxsQ5o0j6uSb6xSB26oCdh/0e7f4b74f7aa358dc97e40a47a44f616_image.png"
+        
         let postString = """
         {
           "requests": [
@@ -39,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
               ],
               "image": {
                 "source": {
-                  "imageUri": "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+                  "imageUri": "\(image)"
                 }
               }
             }
@@ -76,7 +79,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     self.annotation.coordinate = CLLocationCoordinate2D(latitude:latitude , longitude: longitude)
                   
                     self.mapView.addAnnotation(self.annotation)
-
                 }
         }
         task.resume()
