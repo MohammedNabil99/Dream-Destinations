@@ -7,6 +7,56 @@
 import UIKit
 import Parse
 import AlamofireImage
+import Foundation
+
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+// https://app.quicktype.io/?share=l0KzbhyyDujEeaS98TPx
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
+
+// MARK: - Welcome
+struct Welcome: Codable {
+    let responses: [Response]
+}
+
+// MARK: - Response
+struct Response: Codable {
+    let landmarkAnnotations: [LandmarkAnnotation]
+}
+
+// MARK: - LandmarkAnnotation
+struct LandmarkAnnotation: Codable {
+    let mid, landmarkAnnotationDescription: String
+    let score: Double
+    let boundingPoly: BoundingPoly
+    let locations: [Location]
+
+    enum CodingKeys: String, CodingKey {
+        case mid
+        case landmarkAnnotationDescription = "description"
+        case score, boundingPoly, locations
+    }
+}
+
+// MARK: - BoundingPoly
+struct BoundingPoly: Codable {
+    let vertices: [Vertex]
+}
+
+// MARK: - Vertex
+struct Vertex: Codable {
+    let x, y: Int
+}
+
+// MARK: - Location
+struct Location: Codable {
+    let latLng: LatLng
+}
+
+// MARK: - LatLng
+struct LatLng: Codable {
+    let latitude, longitude: Double
+}
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,7 +68,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTP1wroX-f5EtG-fdw-BYWB5mTeZRtFdgrVME8ZXHJKxoDMCHS1o_c-YIgcgI2NmVqIlR0rSGh8tbJVBBkIoOF_H-Ng5eDPBVyoIcDtQsORhKmpEygPQmEk2rtzp4wz6o8OJAZFaFtLpNMrMcJmFmuCms9mnljwgQVshnGCkZS5kU80v01NB4zlTtf4Kj63YFokCveAHwkg-enVhQAnL4CQAcQs"
+        let key = "ya29.c.b0AXv0zTPKAF3XIErOWL17ZvQheW6ilGNlJRJjMreI5PDF_z8tHvTRdDzwh3dbN1LWjlDcbLG_xBXanIm4R8c_SZF_jCfK45tobA6brYkDOF9cSsZ_uFwwzZAFEUm3DmlYA7G4NfDkrjPGID7gRIzpr3BRmHGd4sIBEgmrsYJ9JytwOhdknLwCD7ZLev3JhiJ3ehPvvo71TxO_i814LHojaIFgKbCThqE"
 
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -53,11 +103,18 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     print("Error took place \(error)")
                     return
                 }
-         
+                
                 // Convert HTTP Response Data to a String
                 if let data = data, let dataString = String(data: data, encoding: .utf8) {
                     print("Response data string:\n \(dataString)")
                     
+                    let jsonData = dataString.data(using: .utf8)!
+                    print(jsonData)
+                    let myResponse = try! JSONDecoder().decode(Welcome.self, from: jsonData)
+                    print(myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription)
+                    print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude)
+                    print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.longitude)
+
                 }
         }
         task.resume()
@@ -106,7 +163,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image = info[.editedImage] as! UIImage
         
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af.imageScaled(to: size)
         
         imageView.image = scaledImage
         
