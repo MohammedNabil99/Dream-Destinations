@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Parse
 
 class TableViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var landmarks = [[String:Any]]()
+    var landmarks = [PFObject]()
     
 
     override func viewDidLoad() {
@@ -28,8 +29,8 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
              } else if let data = data {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                  
-                 self.landmarks = dataDictionary["results"] as! [[String : Any]]
-                 print(dataDictionary)
+                 
+               
 
                     // TODO: Get the array of movies
                     // TODO: Store the movies in a property to use elsewhere
@@ -41,13 +42,31 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let query = PFQuery(className: "Posts")
+        query.includeKey("")
+        query.limit = 20
+        query.findObjectsInBackground{(landmarks,error) in
+            if landmarks != nil{
+                self.landmarks = landmarks!
+                self.tableView.reloadData()
+            }
+                    
+    }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return landmarks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "row: \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
+        let landmark = landmarks[indexPath.row]
+//        cell.landmarkLabel.text =
+        let imageFile = landmark["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        cell.photoView.af_setImage(withURL: url)
         return cell
         
     }

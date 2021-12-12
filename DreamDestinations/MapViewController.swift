@@ -21,7 +21,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTN7YEwUZeO232ht9ataVOOTKzEw1jLXKz5AwcbREV1FX98KBdYCXOU4_csRausazpkKs6S4GxjySuDMv_8PqUav3_sKRwjngQr8B1qiVCV_WqPlROKrDNcTP-HE9Yr7ziVHVebBivTtUP6KrGUiS7mlXptZKHsyeBb-Lp6MvANhjXGWNLNKESSMAsYgfmil2VEXKGGkhvN-mLethxPNBbWAW5A"
+        let key = "ya29.c.b0AXv0zTMg21JM4r22BPLkZxjIAdc-JKEcxpKPLFnBGtrwtmkKKrfIc7tUvmp4AogFI4OZetQ8TaVEqOAOawdrjUphb6Z2H8K2ZYWHYtaZEVH6OuCFlL0s0fHHwl9uIPu5Na1OeFEUBcR6qmGSW7yRSpurt0lWTr7dCbE7qVTSNvEbjLOGYZCwWppl96o4OxbmcNSKJ4CsNBsh3m7dsyEvsefNW-rIHFc"
 
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
