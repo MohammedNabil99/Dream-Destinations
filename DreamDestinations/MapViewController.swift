@@ -21,8 +21,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTMg21JM4r22BPLkZxjIAdc-JKEcxpKPLFnBGtrwtmkKKrfIc7tUvmp4AogFI4OZetQ8TaVEqOAOawdrjUphb6Z2H8K2ZYWHYtaZEVH6OuCFlL0s0fHHwl9uIPu5Na1OeFEUBcR6qmGSW7yRSpurt0lWTr7dCbE7qVTSNvEbjLOGYZCwWppl96o4OxbmcNSKJ4CsNBsh3m7dsyEvsefNW-rIHFc"
-
+        let key = "ya29.c.b0AXv0zTMpOP8XIRcAp3EsgC0cRHJjyfXCdOnCCE2LWWZcKps_DDyhCJ_jtEUz7IDdNIz5gUn2ABnnfBdkeduOIWOCpqCZD_Pn7W2SrSlGUi5RebC7L7jm4NLeAKJEJcHUNh4ZZl2ThTkqQy9t3Ygkf49JhiSLR72ozk6tOQ6mkPkWVWujotnzQk5dDBvg6v8q0Ys3kjQfdehoSpe5BML2ovydLrNDHjA"
+        
+        let image = "https://parsefiles.back4app.com/PxG3meZUr5AikZtQ88TxsQ5o0j6uSb6xSB26oCdh/2ad45cec1da352ab14320cd0cda9bfdc_image.png"
+        
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
@@ -39,7 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
               ],
               "image": {
                 "source": {
-                  "imageUri": "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+                  "imageUri": "\(image)"
                 }
               }
             }
