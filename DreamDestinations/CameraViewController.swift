@@ -18,7 +18,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
-        let key = "ya29.c.b0AXv0zTP1wroX-f5EtG-fdw-BYWB5mTeZRtFdgrVME8ZXHJKxoDMCHS1o_c-YIgcgI2NmVqIlR0rSGh8tbJVBBkIoOF_H-Ng5eDPBVyoIcDtQsORhKmpEygPQmEk2rtzp4wz6o8OJAZFaFtLpNMrMcJmFmuCms9mnljwgQVshnGCkZS5kU80v01NB4zlTtf4Kj63YFokCveAHwkg-enVhQAnL4CQAcQs"
+        let key = "ya29.c.b0AXv0zTMQT6hVpBR57fBnKW04JzGGWkH3qO3wOBJp6eQbVKTy0C1STPlGL9cFHrV0exrqS57UHNUJd0oi4y6xCdWsaTctkPBa-APXfMcYLr4kmvrPBWBsDD0JD83iEd6AdJbHINqYWST98bowFX2lwpUmNG_h69dYTb-o4nsWOJJpTsvJ5hqxzTBq0VzWB3vZzRxCER4Cd0rLb9PYQPfxqk2ibNL4-oE"
 
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
