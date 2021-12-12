@@ -70,6 +70,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         let key = "ya29.c.b0AXv0zTPKAF3XIErOWL17ZvQheW6ilGNlJRJjMreI5PDF_z8tHvTRdDzwh3dbN1LWjlDcbLG_xBXanIm4R8c_SZF_jCfK45tobA6brYkDOF9cSsZ_uFwwzZAFEUm3DmlYA7G4NfDkrjPGID7gRIzpr3BRmHGd4sIBEgmrsYJ9JytwOhdknLwCD7ZLev3JhiJ3ehPvvo71TxO_i814LHojaIFgKbCThqE"
 
+        let image = "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+        
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
@@ -86,7 +88,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
               ],
               "image": {
                 "source": {
-                  "imageUri": "gs://cloud-samples-data/vision/landmark/st_basils.jpeg"
+                  "imageUri": "\(image)"
                 }
               }
             }
@@ -109,7 +111,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     print("Response data string:\n \(dataString)")
                     
                     let jsonData = dataString.data(using: .utf8)!
-                    print(jsonData)
                     let myResponse = try! JSONDecoder().decode(Welcome.self, from: jsonData)
                     print(myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription)
                     print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude)
