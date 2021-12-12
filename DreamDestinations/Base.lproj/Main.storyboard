@@ -220,11 +220,7 @@
                     <view key="view" contentMode="scaleToFill" id="NFI-W6-dtw">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<<<<<<< HEAD
                         <viewLayoutGuide key="safeArea" id="Bsy-Do-pob"/>
-=======
-                        <viewLayoutGuide key="safeArea" id="9Ox-vQ-Msn"/>
->>>>>>> e0662181ff900357e666d674cb5ff8e24c15cb62
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
