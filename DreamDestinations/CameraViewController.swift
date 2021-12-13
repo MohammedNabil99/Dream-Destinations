@@ -58,6 +58,7 @@ struct LatLng: Codable {
     let latitude, longitude: Double
 }
 
+
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -66,6 +67,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         
     }
     
@@ -86,18 +88,28 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
   
     @IBAction func onSaveImageButton(_ sender: Any) {
+        
         let post = PFObject(className: "Posts")
         
        // post["author"] = PFUser.current()!
-        
         let imageData = imageView.image!.pngData()
         
-        let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
-        
-        let key = "ya29.c.b0AXv0zTOMQZa-zxhWZ15hKluntzCY3z4hZiM---cB_OWwG74MfB55JHwqtNueiGNJFnCaYqaFECRiUiusvXHp28IJgx6jHITSQtD0emAdXm26tSD0bshglqVK2tvEeRkW7X3Ext_X1tsO7tFEL7IziE0FSzKcYSHMYkDpgB3sTDX1HU1XBL9vag5VYVunI9mCLrqs6VjE9qqcTL12zjcCglvJUVeDJ9Q"
+        let file = PFFileObject(name: "image.png", data: imageData!)
 
-        let image = imageData!.base64EncodedString(options: .lineLength64Characters)
+        //let urlString = file?.url!
         
+        post["image"] = file
+        
+        
+
+        
+            
+        let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
+
+        let key = "ya29.c.b0AXv0zTN_g0PjMcaJZNXbUpwTsrqdhSIvoPei70NJUKdk8DKrgf6Bq1JvQUx5a0spBDEc5wTHIncqC1P5W_6xIaKCOSSXpP1N_dO91M5jZlMFkzgZ1EInYMInpYYKVb4oj6hfMn3sXr0Dx7JbGs-SdZoizlZkikjrb-NxEAFH2Zyw_Shlof3dFdm1Bq6MN403qn0LNQj-dNMHNpkOifj3hCPjszxOwzY"
+
+        let image = "https://parsefiles.back4app.com/PxG3meZUr5AikZtQ88TxsQ5o0j6uSb6xSB26oCdh/2ad45cec1da352ab14320cd0cda9bfdc_image.png"
+
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
@@ -122,48 +134,58 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         """
         request.httpBody = postString.data(using: String.Encoding.utf8);
-        
+
 //      function that does the actual API call
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                
+
                 // Check for Error
                 if let error = error {
                     print("Error took place \(error)")
                     return
                 }
-                
+
                 // Convert HTTP Response Data to a String
                 if let data = data, let dataString = String(data: data, encoding: .utf8) {
                     print("Response data string:\n \(dataString)")
-                    
+
                     let jsonData = dataString.data(using: .utf8)!
                     let myResponse = try! JSONDecoder().decode(Welcome.self, from: jsonData)
                     let description = myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription
                     let latitude = myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude
                     let longitude = myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.longitude
-                    
-                    // TODO: change the print statements to upload to parse database
-                    print(description)
-                    print(latitude)
-                    print(longitude)
 
+                    // TODO: change the print statements to upload to parse database
+                   // print(description)
+                    //print(latitude)
+                   // print(longitude)
+    
+
+                    //let urlString = file?.url!
+                    
+
+
+                    //let urlString = file?.url!
+                    
+                    post.setObject(description, forKey: "Description")
+                    post.setObject(latitude, forKey: "latitude")
+                    post.setObject(longitude, forKey: "longitude")
+                    
+                    post.saveInBackground { (success, error) in
+                        if success {
+                            self.dismiss(animated: true, completion: nil)
+                            print("saved!")
+
+                        }
+                        else{
+                            print("error!")
+                        }
+                    }
+                   
                 }
         }
         task.resume()
-        
-        let file = PFFileObject(name: "image.png", data: imageData!)
-        
-        post["image"] = file
-        post.saveInBackground { (success, error) in
-            if success {
-                self.dismiss(animated: true, completion: nil)
-                print("saved!")
-            }
-            else{
-                print("error!")
-            }
+
            
-    }
 
 }
     

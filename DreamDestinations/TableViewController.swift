@@ -41,7 +41,6 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCellTableViewCell") as! PostCellTableViewCell
         let landmark = landmarks[indexPath.row]
-//        cell.landmarkLabel.text =
         let imageFile = landmark["image"] as! PFFileObject
         let urlString = imageFile.url!
         let url = URL(string: urlString)!
