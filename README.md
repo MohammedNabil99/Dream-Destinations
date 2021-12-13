@@ -135,8 +135,10 @@ query.findObjectsInBackground {
 //Images are saved to parse server.
 
 
-![](https://i.imgur.com/ovWvYam.gif)
 
 
 
 
+
+
+![](https://i.imgur.com/gayauto.gif)
