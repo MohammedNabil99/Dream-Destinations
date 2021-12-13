@@ -45,7 +45,8 @@ struct BoundingPoly: Codable {
 
 // MARK: - Vertex
 struct Vertex: Codable {
-    let x, y: Int
+    let y: Int
+    let x: Int?
 }
 
 // MARK: - Location
@@ -58,7 +59,6 @@ struct LatLng: Codable {
     let latitude, longitude: Double
 }
 
-
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -67,7 +67,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         
     }
     
@@ -100,35 +99,30 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         post["image"] = file
         
-        
-
-        
-            
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
 
         let key = "ya29.c.b0AXv0zTN_g0PjMcaJZNXbUpwTsrqdhSIvoPei70NJUKdk8DKrgf6Bq1JvQUx5a0spBDEc5wTHIncqC1P5W_6xIaKCOSSXpP1N_dO91M5jZlMFkzgZ1EInYMInpYYKVb4oj6hfMn3sXr0Dx7JbGs-SdZoizlZkikjrb-NxEAFH2Zyw_Shlof3dFdm1Bq6MN403qn0LNQj-dNMHNpkOifj3hCPjszxOwzY"
 
-        let image = "https://parsefiles.back4app.com/PxG3meZUr5AikZtQ88TxsQ5o0j6uSb6xSB26oCdh/2ad45cec1da352ab14320cd0cda9bfdc_image.png"
-
+    
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         request.addValue("Bearer \(key)", forHTTPHeaderField: "Authorization")
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        let image = imageData!.base64EncodedString()
         let postString = """
         {
           "requests": [
             {
+              "image": {
+                "content": "\(image)"
+              },
               "features": [
                 {
                   "maxResults": 10,
                   "type": "LANDMARK_DETECTION"
-                }
-              ],
-              "image": {
-                "source": {
-                  "imageUri": "\(image)"
-                }
-              }
+                },
+              ]
             }
           ]
         }
@@ -158,13 +152,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                    // print(description)
                     //print(latitude)
                    // print(longitude)
-    
-
-                    //let urlString = file?.url!
-                    
-
-
-                    //let urlString = file?.url!
                     
                     post.setObject(description, forKey: "Description")
                     post.setObject(latitude, forKey: "latitude")
@@ -184,9 +171,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 }
         }
         task.resume()
-
-           
-
 }
     
     
