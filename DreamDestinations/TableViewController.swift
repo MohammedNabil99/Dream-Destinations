@@ -44,6 +44,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let imageFile = landmark["image"] as! PFFileObject
         let urlString = imageFile.url!
         let url = URL(string: urlString)!
+        cell.landmarkLabel.text = landmark["Description"] as! String
         cell.photoView.af_setImage(withURL: url)
         return cell
         
