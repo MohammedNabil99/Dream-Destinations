@@ -66,14 +66,37 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func onCameraButton(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            picker.sourceType = .camera
+            
+        }else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+        
+    }
+  
+    @IBAction func onSaveImageButton(_ sender: Any) {
+        let post = PFObject(className: "Posts")
+        
+       // post["author"] = PFUser.current()!
+        
+        let imageData = imageView.image!.pngData()
+        
         let url = URL(string: "https://vision.googleapis.com/v1/images:annotate")
         
+        let key = "ya29.c.b0AXv0zTOMQZa-zxhWZ15hKluntzCY3z4hZiM---cB_OWwG74MfB55JHwqtNueiGNJFnCaYqaFECRiUiusvXHp28IJgx6jHITSQtD0emAdXm26tSD0bshglqVK2tvEeRkW7X3Ext_X1tsO7tFEL7IziE0FSzKcYSHMYkDpgB3sTDX1HU1XBL9vag5VYVunI9mCLrqs6VjE9qqcTL12zjcCglvJUVeDJ9Q"
 
-        let key = "ya29.c.b0AXv0zTMpOP8XIRcAp3EsgC0cRHJjyfXCdOnCCE2LWWZcKps_DDyhCJ_jtEUz7IDdNIz5gUn2ABnnfBdkeduOIWOCpqCZD_Pn7W2SrSlGUi5RebC7L7jm4NLeAKJEJcHUNh4ZZl2ThTkqQy9t3Ygkf49JhiSLR72ozk6tOQ6mkPkWVWujotnzQk5dDBvg6v8q0Ys3kjQfdehoSpe5BML2ovydLrNDHjA"
-
-      
-
-        let image = "https://parsefiles.back4app.com/PxG3meZUr5AikZtQ88TxsQ5o0j6uSb6xSB26oCdh/2ad45cec1da352ab14320cd0cda9bfdc_image.png"
+        let image = imageData!.base64EncodedString(options: .lineLength64Characters)
         
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -115,37 +138,19 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     
                     let jsonData = dataString.data(using: .utf8)!
                     let myResponse = try! JSONDecoder().decode(Welcome.self, from: jsonData)
-                    print(myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription)
-                    print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude)
-                    print(myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.longitude)
+                    let description = myResponse.responses[0].landmarkAnnotations[0].landmarkAnnotationDescription
+                    let latitude = myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.latitude
+                    let longitude = myResponse.responses[0].landmarkAnnotations[0].locations[0].latLng.longitude
+                    
+                    // TODO: change the print statements to upload to parse database
+                    print(description)
+                    print(latitude)
+                    print(longitude)
 
                 }
         }
         task.resume()
-    }
-    
-    @IBAction func onCameraButton(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            picker.sourceType = .camera
-            
-        }else {
-            picker.sourceType = .photoLibrary
-        }
-        
-        present(picker, animated: true, completion: nil)
-        
-    }
-  
-    @IBAction func onSaveImageButton(_ sender: Any) {
-        let post = PFObject(className: "Posts")
-        
-       // post["author"] = PFUser.current()!
-        
-        let imageData = imageView.image!.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
         
         post["image"] = file
