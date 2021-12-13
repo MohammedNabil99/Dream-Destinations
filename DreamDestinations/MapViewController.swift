@@ -8,6 +8,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
+
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
 
 {
@@ -16,8 +17,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     let locationManager = CLLocationManager()
     let annotation = MKPointAnnotation()
+    let annotation2 = MKPointAnnotation()
+    let annotation3 = MKPointAnnotation()
+    
 
     override func viewDidLoad() {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 40.689, longitude: -74.044)
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: 41.890, longitude: 12.491)
+        annotation3.coordinate = CLLocationCoordinate2D(latitude: 27.175, longitude: 78.042)
+        mapView.addAnnotation(annotation)
+        mapView.addAnnotation(annotation2)
+        mapView.addAnnotation(annotation3)
         super.viewDidLoad()
     }
 
