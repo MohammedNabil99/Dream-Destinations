@@ -134,11 +134,5 @@ query.findObjectsInBackground {
 
 //Images are saved to parse server.
 
-
-
-
-
-
-
-
-![](https://i.imgur.com/gayauto.gif)
+* Link to view how the app works:
+https://drive.google.com/file/d/1ZpZXGyuqxQcoV_H0imNChIqDWskZAZqj/view?usp=sharing
