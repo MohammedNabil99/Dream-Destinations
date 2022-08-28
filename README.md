@@ -11,6 +11,8 @@ Dream Destinations - README
 ## Overview
 ### Description
 This is a location detector app, which allow user to upload pictures of various locations and have those locations be marked on a built in map. The app will take into account the uploaded pictures. 
+* Link to view how the app works:
+https://drive.google.com/file/d/1ZpZXGyuqxQcoV_H0imNChIqDWskZAZqj/view?usp=sharing
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
@@ -134,5 +136,3 @@ query.findObjectsInBackground {
 
 //Images are saved to parse server.
 
-* Link to view how the app works:
-https://drive.google.com/file/d/1ZpZXGyuqxQcoV_H0imNChIqDWskZAZqj/view?usp=sharing
